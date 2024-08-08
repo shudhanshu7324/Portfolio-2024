@@ -119,4 +119,6 @@
 
 .user-img img{
     width: 17vw;
+    padding: 5%;
+    box-shadow: 5px 5px 15px black, -5px -5px 15px;
 }
