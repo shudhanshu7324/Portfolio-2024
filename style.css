@@ -284,6 +284,8 @@
     width: 80%;
     position: relative;
     box-shadow: 0px 0px 40px #1f1f1f;
+    height: 70vh;
+    background-size: cover;
 }
 
 .project-card::after{
@@ -318,9 +320,7 @@
 
 
 #project1{
-    height: 70vh;
     background-image: url(./images/projects/pr-1.png);
-    background-size: cover;
 }
 
 
@@ -330,6 +330,11 @@
     font-weight: 500;
     color: white;
     z-index: 10;
+    display: none;
+}
+
+.project-card:hover .project-number{
+    display: block;
 }
 
 .number-right{
@@ -348,24 +353,51 @@
     z-index: 5;
     display: flex;
     flex-direction: column;
-    top: 20%;
-    left: 10%;
-    width: 50%;
+    bottom: 10%;
+    width: 60%;
     color: white;
     gap: 20px;
+    padding: 2em;
+}
+
+.project-card:hover .project-content{
+    transform: scale(1.1);
+    transition: all 0.3s ease;
 }
 
 
 .project-content a{
     color: white;
+    font-size: 1.5em;
 }
 
+.project-content a:hover{
+    color: #e84949;
+    transition: all 0.3s;
+}
 
+.content-left{
+    left: 10%;
+}
 
+.content-right{
+    right: 10%;
+}
 
+.project-heading{
+    font-size: 2.2em;
+    font-weight: 500;
+}
 
+.project-subheading{
+    font-style: italic;
+}
 
-
+.btn-grp{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
 
 
 .project-skill{
@@ -376,3 +408,17 @@ button{
     border: none;
 }
 
+
+#project2{
+    background-image: url(./images/projects/pr-2.png);
+    margin-left: 15%;
+}
+
+#project3{
+    background-image: url(./images/projects/pr-3.png);
+}
+
+#project4{
+    background-image: url(./images/projects/pr-4.png);
+    margin-left: 15%;
+}
