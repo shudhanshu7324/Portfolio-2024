@@ -6,11 +6,34 @@
     box-sizing: border-box;
 }
 
+/* The entire scrollbar */
+::-webkit-scrollbar {
+    width: 4px; /* Negligible width */
+}
+
+/* The scrollbar track */
+::-webkit-scrollbar-track {
+    background: transparent; /* Transparent track */
+}
+
+/* The scrollbar thumb */
+::-webkit-scrollbar-thumb {
+    background-color: #e84949; /* Solid color for the thumb */
+    border-radius: 10px;
+}
+
+/* The scrollbar thumb when hovered */
+::-webkit-scrollbar-thumb:hover {
+    background-color: #c73c3c; /* Slightly darker shade on hover */
+}
+
+
 .root{
     height: 100vh;
     overflow-y: auto;
     overflow-x: hidden;
     font-family: "Ubuntu", sans-serif;
+    scroll-behavior: smooth;
 }
 
 .container{
@@ -43,6 +66,7 @@
     font-size: 1.4em;
 }
 
+
 .logo-content{
     margin-left: -8%;
     color: #e84949;
@@ -65,11 +89,15 @@
     font-weight: 500;
 }
 
+
+
 /* hero section */
 
 .hero{
     display: flex;
     justify-content: space-around;
+    margin-top: 2%;
+    padding-top: 3%;
 }
 
 .hero-left{
@@ -115,10 +143,136 @@
     text-align: center;
     box-shadow: 5px 5px 7px 0px #0000003f;
     cursor: pointer;
+    position: relative;
+    z-index: 1;
+}
+
+.btn::before{
+    content: "";
+    background-color: #1f1f1f;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: 0.8s;
+    z-index: -1;
+}
+
+.btn:hover::before{
+    transform: scaleX(1);
+}
+
+
+.hero-right{
+    position: relative;
 }
 
 .user-img img{
-    width: 17vw;
-    padding: 5%;
-    box-shadow: 5px 5px 15px black, -5px -5px 15px;
+    width: 14vw;
+    height: 50vh;
+    z-index: -1;
+}
+
+.user-img{
+    padding: 1.5em;
+    filter: grayscale(1);
+    transition: all 1s;
+    animation: scaleImage 5s linear infinite;
+    /* border: 1px solid black; */
+}
+
+@keyframes scaleImage{
+    0%{
+        filter: grayscale(1);
+        transform: scale(1);
+        
+    }
+
+    50%{
+        filter: grayscale(0);
+        transform: scale(1.1);
+        box-shadow: 3px 3px 10px black;
+    }
+
+    100%{
+        filter: grayscale(1);
+        transform: scale(1);
+    }
+}
+
+.png img{
+    width: 3vw;
+}
+
+.png{
+    position: absolute;
+    z-index: 5;
+}
+
+.png1{
+    top: 90%;
+    left: -10%;
+    animation: rotateImg 2s infinite;
+}
+
+@keyframes rotateImg {
+    0%{
+        transform:rotateY(0deg) translateY(0px); 
+    }
+
+    50%{
+        transform:rotateY(180deg) translateY(15px);
+    }
+
+    100%{
+        transform:rotateY(360deg) translateY(0px);
+    }
+}
+
+.png3{
+    top: 0%;
+    right: -8%;
+    animation: translateImg 3s infinite;
+}
+
+@keyframes translateImg {
+    0%{
+        transform:translateY(-10px); 
+    }
+
+    50%{
+        transform:translateY(25px);
+    }
+
+    100%{
+        transform:translateY(-10px);
+    }
+}
+
+
+
+/*  Project section */
+
+.project-section{
+    height: 100vh;
+    overflow-y: auto;
+    background-color: rgb(220, 220, 220);
+    margin-top: 5.85%;
+}
+
+.project-header{
+    padding-top: 1.5%;
+    text-align: center;
+    font-size: 4em;
+    color: #e84949;
+    font-weight: 500;
+}
+
+
+.project-cards{
+    width: 80vw;
+    margin: auto;
 }
