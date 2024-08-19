@@ -458,7 +458,7 @@ button{
 
 
 .skills{
-    height: 80vh;
+    height: 100vh;
     position: relative;
     display: flex;
     justify-content: space-around;
@@ -472,7 +472,7 @@ button{
     user-select: none;
     font-size: 10em;
     color: rgb(234, 233, 233);
-    bottom: -12%;
+    bottom: -4.5%;
     right: -15%;
     font-weight: 500;
     transition: all 3s;
@@ -531,4 +531,108 @@ button{
 
 .skill-left p{
     font-size: 1.2em;
+}
+
+
+.education{
+    height: 70vh;
+    padding-top: 3%;
+    background-color: rgb(220, 220, 220);
+}
+
+.education h2{
+    font-size: 3em;
+    text-align: center;
+    color: #e84949;
+}
+
+.education-container{
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+    padding-top: 5em;
+}
+
+.education-card{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.contact{
+    height: 40vh;
+}
+
+.contact-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 3%;
+    gap: 1.5em;
+}
+
+.contact h2{
+    font-size: 3em;
+    color: #e84949;
+    text-align: center;
+    padding-top: 2%;
+}
+
+.phone{
+    font-size: 1.5em;
+}
+
+.email{
+    font-size: 1.5em;
+}
+
+
+.footer{
+    height: 20vh;
+    background-color: #e84949;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    color: white;
+}
+
+.footer .div1{
+    display: flex;
+    justify-content: space-evenly;
+    width: 25%;
+}
+
+.footer .div1 a{
+    text-decoration: none;
+    color: white;
+    height: 10%;
+}
+
+.footer .div2{
+    display: flex;
+    width: 20%;
+}
+
+.footer .div3{
+    display: flex;
+    width: 20%;
+    gap: 3em;
+}
+
+.footer .div3 a{
+    color: white;
+    font-size: 1.5em;
+}
+
+.footer-text{
+    position: absolute;
+    user-select: none;
+    font-size: 3em;
+    color: #bd3e3e;
+    font-weight: 500;
+    top: 60%;
+    left: 0%;
 }
