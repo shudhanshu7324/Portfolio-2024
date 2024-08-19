@@ -34,6 +34,7 @@
     overflow-x: hidden;
     font-family: "Ubuntu", sans-serif;
     scroll-behavior: smooth;
+    perspective: 10px;
 }
 
 .container{
@@ -106,7 +107,39 @@
     justify-content: center;
     gap: 2em;
     width: 50vw;
+    position: relative;
 }
+
+/* .ani img{
+    width: 60%;
+}
+
+.ani{
+    position: absolute;
+    z-index: -5;
+    top: -10%;
+    left: 25%;
+    animation: scaleAni 3s infinite;
+}
+
+@keyframes scaleAni {
+    0%{
+        transform: scale(1) rotateY(360deg);
+        filter: grayscale(100%);
+    }
+
+    50%{
+        transform: scale(1.3) rotateX(360deg);
+        filter: grayscale(0%);
+    }
+
+    100%{
+        transform: scale(1);
+        filter: grayscale(100%);
+    }
+} */
+
+
 
 .hero-left-one{
     font-size: 1.7em;
@@ -421,4 +454,81 @@ button{
 #project4{
     background-image: url(./images/projects/pr-4.png);
     margin-left: 15%;
+}
+
+
+.skills{
+    height: 80vh;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 5%;
+}
+
+.faded-skill{
+    position: absolute;
+    user-select: none;
+    font-size: 10em;
+    color: rgb(234, 233, 233);
+    bottom: -12%;
+    right: -15%;
+    font-weight: 500;
+    transition: all 3s;
+}
+
+.skill-logo img{
+    width: 6vw;
+}
+
+.skill-left{
+    width: 50%;
+    padding-left: 3%;
+    padding-right: 3%;
+}
+
+.skill-right{
+    position: relative;
+    width: 40%;
+    padding-top: 5%;
+}
+
+.blob{
+    position: absolute;
+    z-index: -1;
+    top: 15%;
+    left: 25%;
+    animation: moveBlob 5s infinite;
+}
+
+@keyframes moveBlob {
+    0%{
+        transform: translateY(0px) rotateZ(0deg);
+    }
+
+    50%{
+        transform: translateY(5px) rotateZ(-15deg);
+    }
+
+    100%{
+        transform: translateY(0px) rotateZ(0deg);
+    }
+}
+
+
+
+.blob img{
+    width: 70%;
+}
+
+
+.skill-left h2{
+    font-size: 2.5em;
+    line-height: 2;
+    color: #e84949;
+}
+
+.skill-left p{
+    font-size: 1.2em;
 }
