@@ -234,6 +234,23 @@
                 <div class="phone"><span class="fa fa-phone"></span> +91 7654160150</div>
                 <div class="email"><span class="fa fa-envelope"></span> shudhanshu7324@gmail.com</div>
             </div>
+
+            <h3>Get Your Query Resolved Here</h3>
+            <form id="contactForm" class="contact-form">
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name" required><br>
+
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" required><br>
+
+                <label for="contactno">Contact No:</label><br>
+                <input type="tel" id="contactno" name="contactno" required><br>
+
+                <label for="message">Message:</label><br>
+                <textarea style="resize: none; width: 40%;" rows="8" id="message" name="message" required></textarea><br>
+
+                <button class="btn" type="submit">Submit</button>
+            </form>
          </div>
 
 
@@ -259,5 +276,33 @@
 
     </div>
     <script src="script.js"></script>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                contactno: document.getElementById('contactno').value,
+                message: document.getElementById('message').value
+            };
+
+            fetch('http://localhost:3000/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert('Form submitted successfully!');
+                console.log(data);
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+        });
+    </script>
 </body>
 </html>
